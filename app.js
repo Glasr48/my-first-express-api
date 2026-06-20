@@ -1,10 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
+app.use(cors());
 
 mongoose.connect('mongodb://Glasr:13468810@ac-zlfqfai-shard-00-00.rsmeudv.mongodb.net:27017,ac-zlfqfai-shard-00-01.rsmeudv.mongodb.net:27017,ac-zlfqfai-shard-00-02.rsmeudv.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-2h2c09-shard-0&authSource=admin&appName=Cluster0')
 .then(() => console.log('✅ Успешно подключились к базе данных MongoDB!'))
